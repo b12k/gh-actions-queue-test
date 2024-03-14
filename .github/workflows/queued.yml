@@ -7,7 +7,8 @@ jobs:
     queue:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/github-script@v3
+          - uses: actions/github-script@v7
             with:
                 script: |
-                    console.log('It works')
+                    const sleep = (sec) => new Promise((resolve) => setTimeout(resolve, sec * 1000));
+                    await sleep(60);
